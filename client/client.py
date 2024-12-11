@@ -8,7 +8,7 @@ def recevoir_messages():
             message = client_socket.recv(1024)
             if message:
                 zone_messages.config(state=tk.NORMAL)  # Permet d'ajouter du texte
-                zone_messages.insert(tk.END, f"Serveur: {message.decode()}\n")
+                zone_messages.insert(tk.END, f"Client: {message.decode()}\n")
                 zone_messages.config(state=tk.DISABLED)  # Rendre la zone non modifiable
         except Exception as e:
             print(f"Erreur de réception : {e}")
